@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>あなたにぴったりの家づくりタイプ診断 | 週刊いいだ 住宅特集</title>
+  <title>あなたにぴったりの家づくりタイプ診断 | 週刊いいだ 住まい特集</title>
   <style>
     * {
       margin: 0;
@@ -431,8 +431,8 @@
   <div class="container">
     <header>
       <div class="header-content">
-        <h1>週刊いいだ　あなたにぴったりの家づくりタイプ診断</h1>
-        <p>5月28日号・6月4日号週刊いいだ 住宅特集 presented by 飯田の家づくりパートナー</p>
+        <h1>あなたにぴったりの家づくりタイプ診断</h1>
+        <p>週刊いいだ 住まい特集 presented by 暮らし住まいのパートナー</p>
       </div>
     </header>
  
@@ -440,12 +440,12 @@
       <!-- イントロセクション -->
       <div id="intro" class="section">
         <div class="hero-box">
-          <img src="house.png" alt="モダンな家と庭" style="width: 100%; height: auto; display: block; max-height: 350px; object-fit: cover;">
+          <img src="house.png" alt="モダンな家と庭" style="width: 100%; height: auto; display: block;">
         </div>
  
         <div class="intro-text">
-          <p>住宅購入は人生で最大の決断の一つ。このちょっとした診断を通じて、あなたにぴったりな家づくりのアプローチが見つかります。</p>
-          <p>5つの質問にお答えいただくだけで、あなたの理想の家づくりをサポートしてくれるパートナーをご紹介します。</p>
+          <p>住宅購入は人生で最大の決断の一つ。このちょっとした診断を通じて、あなたにぴったりな暮らし・住まいづくりのアプローチが見つかります。</p>
+          <p>5つの質問にお答えいただくだけで、あなたの理想の暮らし・住まいづくりをサポートしてくれるパートナーをご紹介します。</p>
         </div>
  
         <button class="btn" onclick="goToQuiz()">診断をはじめる</button>
@@ -476,7 +476,7 @@
           <h3>パートナー企業一覧</h3>
           <div id="sponsorsRecommended" class="sponsors-list sponsors-recommended"></div>
           <div id="sponsorsOther" class="sponsors-other">
-            <p class="sponsors-other-label">週刊いいだ 住宅特集 スポンサー一覧</p>
+            <p class="sponsors-other-label">週刊いいだ 住まい特集 スポンサー一覧</p>
             <div id="sponsorsOtherList" class="sponsors-list sponsors-other-list"></div>
           </div>
         </div>
@@ -494,8 +494,8 @@
     // スポンサーデータ
     const sponsors = {
       '金融系': [
-        { name: 'ろうきん ローンセンター飯田', url: 'https://www.nagano-rokin.co.jp/loan_center/detail/9' },
-        { name: 'JAみなみ信州 ローンセンター', url: 'https://www.ja-mis.iijan.or.jp/pages/loancenter' },
+        { name: '長野ろうきん ローンセンター飯田', url: 'https://www.nagano-rokin.co.jp/loan_center/detail/9' },
+        { name: 'JAみなみ信州 JAローンセンター', url: 'https://www.ja-mis.iijan.or.jp/pages/loancenter' },
         { name: '飯田信用金庫 しんきんプラザ みらとも', url: 'https://www.iidashinkin.co.jp/personal/loan/loancenter/' }
       ],
       '土地探し': [
@@ -504,11 +504,11 @@
       'ハウスメーカー・工務店': [
         { name: 'くましろハウジング', url: 'https://kumashiro-housing.com/' },
         { name: '城東工務店', url: 'http://joto-k.com/' },
-        { name: '小木曽建設', url: 'https://www.ogiken.co.jp/' },
         { name: 'エースホーム飯田店', url: 'https://www.acehome.co.jp/shop/iida' }
       ],
       '外構': [
-        { name: '有限会社 赤松庵', url: 'https://sekisyoan.net/' }
+        { name: '小木曽建設', url: 'https://www.ogiken.co.jp/' },
+        { name: '赤松庵', url: 'https://sekisyoan.net/' }
       ]
     };
  
@@ -518,9 +518,10 @@
         id: 'q1',
         title: '家づくりで最初に検討することは？',
         options: [
-          { label: '予算・資金計画', value: 'budget' },
-          { label: '土地探し', value: 'land' },
-          { label: 'デザイン・間取り', value: 'design' }
+          { label: '無理なく建てられる家の予算を知りたい', value: 'budget' },
+          { label: '理想の土地から家づくりを始めたい', value: 'land' },
+          { label: '自分たちらしい家のデザインを追求したい', value: 'design' },
+          { label: '完成後の庭や外構にこだわりたい', value: 'exterior' }
         ]
       },
       {
@@ -534,7 +535,7 @@
       },
       {
         id: 'q3',
-        title: 'あなたが家づくりで最も重視することは？',
+        title: '家づくりで最も重視することは？',
         options: [
           { label: 'デザイン・外観', value: 'aesthetic' },
           { label: '性能・省エネ', value: 'performance' },
@@ -545,8 +546,8 @@
         id: 'q4',
         title: '立地の希望は？',
         options: [
-          { label: '駅近など周辺環境', value: 'urban' },
-          { label: '自然環境', value: 'suburban' },
+          { label: '都市型・駅近', value: 'urban' },
+          { label: '郊外・自然環境', value: 'suburban' },
           { label: 'こだわらない', value: 'flexible' }
         ]
       },
@@ -628,13 +629,21 @@
  
     // 診断結果ロジック
     function getResultType() {
-      if (answers.q1 === 'budget' || answers.q5 === 'soon') {
+      // Q1が最優先
+      if (answers.q1 === 'budget') {
         return 'まずは資金計画・ローン相談';
       } else if (answers.q1 === 'land') {
         return 'まずは土地探し';
-      } else {
+      } else if (answers.q1 === 'exterior') {
+        return 'まずは庭や外構を整えたい';
+      } else if (answers.q1 === 'design') {
         return 'まずはハウスメーカー・工務店に相談';
       }
+      // Q5も考慮（補助的）
+      if (answers.q5 === 'soon') {
+        return 'まずは資金計画・ローン相談';
+      }
+      return 'まずはハウスメーカー・工務店に相談';
     }
  
     // ソート済みスポンサー取得
@@ -642,7 +651,8 @@
       const categoryMap = {
         'まずは資金計画・ローン相談': '金融系',
         'まずは土地探し': '土地探し',
-        'まずはハウスメーカー・工務店に相談': 'ハウスメーカー・工務店'
+        'まずはハウスメーカー・工務店に相談': 'ハウスメーカー・工務店',
+        'まずは庭や外構を整えたい': '外構'
       };
       
       const allSponsors = [];
